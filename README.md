@@ -1,5 +1,5 @@
 # Eksamens_Nora
-Eksāmena darbs
+Eksāmena darbs par ciklu ar skaitītāju
 
 ## Darāmie darbi
 - [ ] Izveidot mācību materiālu par ciklu ar skaitītāju
