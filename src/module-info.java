@@ -6,4 +6,5 @@
  *
  */
 module CiklsArSkaititaju {
+	requires java.desktop;
 }
