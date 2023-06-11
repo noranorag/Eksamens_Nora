@@ -14,6 +14,9 @@ import javax.swing.JPanel;
 
 
 public class EksamenaDarbs {
+	
+	private static boolean pabeigts = false;
+	
 	public static void main(String[] args) {
 		
 		try {
@@ -64,6 +67,7 @@ public class EksamenaDarbs {
 
         sakumaPoga.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            	
                 JOptionPane.showMessageDialog(frame2, "Atbidli uz 10 jautājumiem un uzzini, cik labi tu zini par ciklu ar skaitītāju");
                 JFrame frame = new JFrame("Jautājumi par ciklu ar skaitītāju");
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -111,13 +115,17 @@ public class EksamenaDarbs {
                             } else {
                                 JOptionPane.showMessageDialog(frame, "Tu pabeidzi!");
                                 frame.dispose();
+                                pabeigts=true;
+                                
                             }
                         } 
+                        
                     }
                 });
 
                 frame.add(panel);
                 frame.setVisible(true);
+         
                
             }
         });        
@@ -133,6 +141,7 @@ public class EksamenaDarbs {
 
         rezultatuPoga.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            	if(pabeigts==true) {
             	
             	String jautajumiN="";
                 JOptionPane.showMessageDialog(frame2, "Spēles rezultāti");
@@ -208,13 +217,10 @@ public class EksamenaDarbs {
                 	rezultats--;
                 	jautajumiN = jautajumiN + jautajumi[9]+"\n";
                 }
-//                JOptionPane.showMessageDialog(frame2, "Tavs rezultāts ir " + rezultats + " punkti.");
                 JOptionPane.showMessageDialog(frame2, "Tavi iegūtie punkti: "+rezultats+"\nNepareizi atbildētie jautājumi: \n" + jautajumiN);
-                
-            }
-        
-            
-            
+            	} else
+            		 JOptionPane.showMessageDialog(frame2, "Nav pabeigts tests!");         		
+            }     
         });
 
         aizvertPoga.addActionListener(new ActionListener() {
