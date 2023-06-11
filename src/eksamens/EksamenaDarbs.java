@@ -16,17 +16,19 @@ import javax.swing.JPanel;
 public class EksamenaDarbs {
 	public static void main(String[] args) {
 		
+		try {
+		
 		String[] jautajumi = {
-                "Kas ir cikls ar skaitītāju?",
-                "Kādi parametri jānorāda for operātorā?",
-                "Kāds var būt cikla skaitītājs?",
-                "Kāds var būt nosacījums pēc tā pārbaudes ciklā?",
-                "Kuri no kodiem veido bezgalīgu ciklu?",
-                "Kādas lietas iespējamas ar for cikla palīdzību?",
-                "Kādas iekavas tiek lietotas for cikla pierakstīšanā?",
-                "Kurus no šiem varētu ierakstīt jautājuma zīmes vietā? for(int ?=1; ?<=3; ?++)",
-                "Kuri fakti par for ciklu ir pareizi?",
-                "Kā izvairīties no bezgalīgā cikla?"
+                "1.Kas ir cikls ar skaitītāju?",
+                "2.Kādi parametri jānorāda for operātorā?",
+                "3.Kāds var būt cikla skaitītājs?",
+                "4.Kāds var būt nosacījums pēc tā pārbaudes ciklā?",
+                "5.Kuri no kodiem veido bezgalīgu ciklu?",
+                "6.Kādas lietas iespējamas ar for cikla palīdzību?",
+                "7.Kādas iekavas tiek lietotas for cikla pierakstīšanā?",
+                "8.Kurus no šiem varētu ierakstīt jautājuma zīmes vietā? for(int ?=1; ?<=3; ?++)",
+                "9.Kuri fakti par for ciklu ir pareizi?",
+                "10.Kā izvairīties no bezgalīgā cikla?"
             };
 		
 		String[] atbildes = new String[jautajumi.length];
@@ -131,74 +133,88 @@ public class EksamenaDarbs {
 
         rezultatuPoga.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            	
+            	String jautajumiN="";
                 JOptionPane.showMessageDialog(frame2, "Spēles rezultāti");
                 int rezultats = 0;
 
                 if (atbildes[0].contains("a)") && atbildes[0].contains("b)") && atbildes[0].contains("c)")) 
                 	rezultats += 2;
-                else
+                else {
                 	rezultats--;;
+                	jautajumiN = jautajumiN + jautajumi[0]+"\n";
+                }
                 
                 if (atbildes[1].contains("a)") && atbildes[1].contains("b)") && atbildes[1].contains("d)")) 
                     rezultats += 2;
-                else
+                else {
                 	rezultats--;
+                	jautajumiN = jautajumiN + jautajumi[1]+"\n";
+                }
 
                 if (atbildes[2].contains("b)") && atbildes[2].contains("c)")) 
                     rezultats += 2;
-                else
+                else {
                 	rezultats--;
-
-                if (atbildes[3].contains("a)") && atbildes[3].contains("b)")) {
-                    rezultats += 2;
+                	jautajumiN = jautajumiN + jautajumi[2]+"\n";
                 }
-                else
-                	rezultats--;
 
-                if (atbildes[4].contains("a)") && atbildes[4].contains("d)")) {
+                if (atbildes[3].contains("a)") && atbildes[3].contains("b)")) 
                     rezultats += 2;
-                }
-                else
+                else {
                 	rezultats--;
+                	jautajumiN = jautajumiN + jautajumi[3]+"\n";
+                }
 
-                if (atbildes[5].contains("a)") && atbildes[5].contains("b)") && atbildes[5].contains("c)")) {
+                if (atbildes[4].contains("a)") && atbildes[4].contains("d)")) 
                     rezultats += 2;
-                }
-                else
+                
+                else {
                 	rezultats--;
+                	jautajumiN = jautajumiN + jautajumi[4]+"\n";
+                }
 
-                if (atbildes[6].contains("a)") && atbildes[6].contains("b)")) {
+                if (atbildes[5].contains("a)") && atbildes[5].contains("b)") && atbildes[5].contains("c)")) 
                     rezultats += 2;
-                }
-                else
+                else {
                 	rezultats--;
+                	jautajumiN = jautajumiN + jautajumi[5]+"\n";
+                }
 
-                if (atbildes[7].contains("b)") && atbildes[7].contains("d)")) {
+                if (atbildes[6].contains("a)") && atbildes[6].contains("b)")) 
+                    rezultats += 2;
+                else {
+                	rezultats--;
+                	jautajumiN = jautajumiN + jautajumi[6]+"\n";
+                }
+
+                if (atbildes[7].contains("b)") && atbildes[7].contains("d)")) 
                     rezultats +=2;
-                }
-                else
+                else {
                 	rezultats--;
+                	jautajumiN = jautajumiN + jautajumi[7]+"\n";
+                }
                 
-                if (atbildes[8].contains("c)") && atbildes[8].contains("d)")) {
+                if (atbildes[8].contains("c)") && atbildes[8].contains("d)")) 
                     rezultats += 2;
-                }
-                else
+                else {
                 	rezultats--;
+                	jautajumiN = jautajumiN + jautajumi[8]+"\n";
+                }
 
-                if (atbildes[9].contains("a)") && atbildes[9].contains("b)") && atbildes[9].contains("c)")) {
+                if (atbildes[9].contains("a)") && atbildes[9].contains("b)") && atbildes[9].contains("c)")) 
                     rezultats += 2;
-                }
-                else
+                else {
                 	rezultats--;
-                JOptionPane.showMessageDialog(frame2, "Tavs rezultāts ir " + rezultats + " punkti.");
-                
-                StringBuilder rezultati = new StringBuilder();
-                for (int i = 0; i < atbildes.length; i++) {
-                    rezultati.append("Jautājums ").append(i + 1).append(": ").append(atbildes[i]).append("\n");
+                	jautajumiN = jautajumiN + jautajumi[9]+"\n";
                 }
-                JOptionPane.showMessageDialog(frame2, rezultati.toString(), "Tavi rezultāti",
-                        JOptionPane.INFORMATION_MESSAGE);
+//                JOptionPane.showMessageDialog(frame2, "Tavs rezultāts ir " + rezultats + " punkti.");
+                JOptionPane.showMessageDialog(frame2, "Tavi iegūtie punkti: "+rezultats+"\nNepareizi atbildētie jautājumi: \n" + jautajumiN);
+                
             }
+        
+            
+            
         });
 
         aizvertPoga.addActionListener(new ActionListener() {
@@ -211,6 +227,10 @@ public class EksamenaDarbs {
             frame2.add(panel2);
             frame2.setVisible(true);
         } while (!aizvertPoga.getModel().isPressed());
+        
+		}catch(Exception e) {
+            JOptionPane.showMessageDialog(null, "Radās kļuda!");
+        }
     }
 }
 		
