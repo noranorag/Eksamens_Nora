@@ -19,7 +19,7 @@ public class EksamenaDarbs {
 		String[] jautajumi = {
                 "Kas ir cikls ar skaitītāju?",
                 "Kādi parametri jānorāda for operātorā?",
-                "Kāds svar būt cikla skaitītājs?",
+                "Kāds var būt cikla skaitītājs?",
                 "Kāds var būt nosacījums pēc tā pārbaudes ciklā?",
                 "Kuri no kodiem veido bezgalīgu ciklu?",
                 "Kādas lietas iespējamas ar for cikla palīdzību?",
@@ -32,16 +32,16 @@ public class EksamenaDarbs {
 		String[] atbildes = new String[jautajumi.length];
 		
 		String[][] opcijas = {
-                {"Cikls, kura izpildes reižu skaits jau iepriekš ir zināms", "Cikls, kas nodrošina darbības kopas atkārtošanos vairākas reizes", "Cikls kura nosacījums tiek pārbaudīts katru reizi pirms tā darbības", "Cikls, kas nejaušu daudzumu reižu atkārtojas"},
-                {"Mainīgā nosaukums", "Cikla mainīgā sākuma vērtība", "Rindiņu daudzums zem cikla", "Cikla beigu nosacījums"},
-                {"Burtu virkne", "Viens simbols", "Vesels skaitlis", "Boolean"},
-                {"Patiess", "Nepatiess", "Patiess un nepatiess reizē", "Neviens no minētajiem"},
-                {"for(int i = 1; i<=10; --i)", "for(int i = 1; i<10; i++)", "for(int i = 1; i<=4; i++)", "for (;;)"},
-                {"Aizpildīt masīvu ar skaitļiem", "Izvadīt masīvu", "Izprintēt skaitļus no 1-10", "Definēt mainīgos"},
-                {"( )", "{ }", "[ ]", "Nevienas"},
-                {"'kakis'", "i", "#", "l"},
-                {"Ja nosacījums ir patiess, tas vienmēr izprintē '+'", "For cikls vienmēr atkārtojas 3 reizes", "For cikls darbību beidz, kad tā nosacījums ir nepatiess", "For cikls vienmēr izpilda nosacījumu vismaz 1 reizi"},
-                {"Pareizi iestatīt sākuma vērtību", "Pareizi iestatīt nosacījumu", "Pareizi iestatīt iterācijas soli", "Ielikt for ciklu starp pēfiņām"}
+                {"a) Cikls, kura izpildes reižu skaits jau iepriekš ir zināms", "b) Cikls, kas nodrošina darbības kopas atkārtošanos vairākas reizes", "c) Cikls kura nosacījums tiek pārbaudīts katru reizi pirms tā darbības", "d) Cikls, kas nejaušu daudzumu reižu atkārtojas"},
+                {"a) Mainīgā nosaukums", "b) Cikla mainīgā sākuma vērtība", "c) Rindiņu daudzums zem cikla", "d) Cikla beigu nosacījums"},
+                {"a) Burtu virkne", "b) Viens simbols", "c) Vesels skaitlis", "d) Boolean"},
+                {"a) Patiess", "b) Nepatiess", "c) Patiess un nepatiess reizē", "d) Neviens no minētajiem"},
+                {"a)for(int i = 1; i<=10; --i)", "b) for(int i = 1; i<10; i++)", "c) for(int i = 1; i<=4; i++)", "d) for (;;)"},
+                {"a) Aizpildīt masīvu ar skaitļiem", "b) Izvadīt masīvu", "c) Izprintēt skaitļus no 1-10", "d) Definēt mainīgos"},
+                {"a) ( )", "b) { }", "c) [ ]", "d) Nevienas"},
+                {"a) 'kakis'", "b) i", "c) #", "d) l"},
+                {"a) Ja nosacījums ir patiess, tas vienmēr izprintē '+'", "b) For cikls vienmēr atkārtojas 3 reizes", "c)For cikls darbību beidz, kad tā nosacījums ir nepatiess", "d) For cikls vienmēr izpilda nosacījumu vismaz 1 reizi"},
+                {"a) Pareizi iestatīt sākuma vērtību", "b) Pareizi iestatīt nosacījumu", "c)Pareizi iestatīt iterācijas soli", "d)Ielikt for ciklu starp pēfiņām"}
             };
 		
 		JFrame frame2 = new JFrame("Sākums");
@@ -109,31 +109,17 @@ public class EksamenaDarbs {
                             } else {
                                 JOptionPane.showMessageDialog(frame, "Tu pabeidzi!");
                                 frame.dispose();
-                                
-                                System.out.println(atbildes[0]);
-                                System.out.println("\nfood - " + atbildes[1]);
-           
                             }
-                        }
-                        
-                        
+                        } 
                     }
-                    
-                    
                 });
-                
-                
 
                 frame.add(panel);
                 frame.setVisible(true);
                
-                
-                
             }
-        });
+        });        
         
-        
-
         instrukcijuPoga.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(frame2, "Izdari šo 10 jautājumu testu un noskaidro, cik daudz tu \nzini par ciklu ar skaitītāju! Katra"
@@ -146,18 +132,72 @@ public class EksamenaDarbs {
         rezultatuPoga.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(frame2, "Spēles rezultāti");
+                int rezultats = 0;
+
+                if (atbildes[0].contains("a)") && atbildes[0].contains("b)") && atbildes[0].contains("c)")) 
+                	rezultats += 2;
+                else
+                	rezultats--;;
                 
-//                int punkti=0;
-//                String str1 = "Cikls, kura izpildes reižu skaits jau iepriekš ir zināms Cikls, kas nodrošina darbības kopas atkārtošanos vairākas reizes";
-//                for(int i=0; i<atbildes.length; i++) {
-//                	if(atbildes[0].equals(str1)) {
-//                		punkti = punkti +2;
-//                	}
-//                	
-//                	
-//                }
-//                JOptionPane.showMessageDialog(frame2, punkti);
-//                
+                if (atbildes[1].contains("a)") && atbildes[1].contains("b)") && atbildes[1].contains("d)")) 
+                    rezultats += 2;
+                else
+                	rezultats--;
+
+                if (atbildes[2].contains("b)") && atbildes[2].contains("c)")) 
+                    rezultats += 2;
+                else
+                	rezultats--;
+
+                if (atbildes[3].contains("a)") && atbildes[3].contains("b)")) {
+                    rezultats += 2;
+                }
+                else
+                	rezultats--;
+
+                if (atbildes[4].contains("a)") && atbildes[4].contains("d)")) {
+                    rezultats += 2;
+                }
+                else
+                	rezultats--;
+
+                if (atbildes[5].contains("a)") && atbildes[5].contains("b)") && atbildes[5].contains("c)")) {
+                    rezultats += 2;
+                }
+                else
+                	rezultats--;
+
+                if (atbildes[6].contains("a)") && atbildes[6].contains("b)")) {
+                    rezultats += 2;
+                }
+                else
+                	rezultats--;
+
+                if (atbildes[7].contains("b)") && atbildes[7].contains("d)")) {
+                    rezultats +=2;
+                }
+                else
+                	rezultats--;
+                
+                if (atbildes[8].contains("c)") && atbildes[8].contains("d)")) {
+                    rezultats += 2;
+                }
+                else
+                	rezultats--;
+
+                if (atbildes[9].contains("a)") && atbildes[9].contains("b)") && atbildes[9].contains("c)")) {
+                    rezultats += 2;
+                }
+                else
+                	rezultats--;
+                JOptionPane.showMessageDialog(frame2, "Tavs rezultāts ir " + rezultats + " punkti.");
+                
+                StringBuilder rezultati = new StringBuilder();
+                for (int i = 0; i < atbildes.length; i++) {
+                    rezultati.append("Jautājums ").append(i + 1).append(": ").append(atbildes[i]).append("\n");
+                }
+                JOptionPane.showMessageDialog(frame2, rezultati.toString(), "Tavi rezultāti",
+                        JOptionPane.INFORMATION_MESSAGE);
             }
         });
 
