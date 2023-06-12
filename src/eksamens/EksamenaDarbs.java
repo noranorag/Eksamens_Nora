@@ -16,6 +16,8 @@ import javax.swing.JPanel;
 public class EksamenaDarbs {
 	
 	private static boolean pabeigts = false;
+	private static int rezultats = 0;
+	private static String jautajumiN="";
 	
 	public static void main(String[] args) {
 		
@@ -67,6 +69,7 @@ public class EksamenaDarbs {
 
         sakumaPoga.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            	rezultats=0;
             	
                 JOptionPane.showMessageDialog(frame2, "Atbidli uz 10 jautājumiem un uzzini, cik labi tu zini par ciklu ar skaitītāju");
                 JFrame frame = new JFrame("Jautājumi par ciklu ar skaitītāju");
@@ -142,10 +145,8 @@ public class EksamenaDarbs {
         rezultatuPoga.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	if(pabeigts==true) {
-            	
-            	String jautajumiN="";
                 JOptionPane.showMessageDialog(frame2, "Spēles rezultāti");
-                int rezultats = 0;
+                
 
                 if (atbildes[0].contains("a)") && atbildes[0].contains("b)") && atbildes[0].contains("c)")) 
                 	rezultats += 2;
@@ -219,7 +220,7 @@ public class EksamenaDarbs {
                 }
                 JOptionPane.showMessageDialog(frame2, "Tavi iegūtie punkti: "+rezultats+"\nNepareizi atbildētie jautājumi: \n" + jautajumiN);
             	} else
-            		 JOptionPane.showMessageDialog(frame2, "Nav pabeigts tests!");         		
+            		 JOptionPane.showMessageDialog(frame2, "Nav pabeigts tests!");    
             }     
         });
 
