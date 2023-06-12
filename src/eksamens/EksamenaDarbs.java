@@ -18,6 +18,8 @@ public class EksamenaDarbs {
 	private static boolean pabeigts = false;
 	private static int rezultats = 0;
 	private static String jautajumiN="";
+	private static boolean nolasits=false;
+	private static boolean izdarits=false;
 	
 	public static void main(String[] args) {
 		
@@ -52,7 +54,6 @@ public class EksamenaDarbs {
             };
 		
 		JFrame frame2 = new JFrame("Sākums");
-        //frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame2.setSize(300, 200);
 
         JButton sakumaPoga = new JButton("Sākt");
@@ -69,6 +70,7 @@ public class EksamenaDarbs {
 
         sakumaPoga.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            	if(izdarits==false) {
             	rezultats=0;
             	
                 JOptionPane.showMessageDialog(frame2, "Atbidli uz 10 jautājumiem un uzzini, cik labi tu zini par ciklu ar skaitītāju");
@@ -128,6 +130,9 @@ public class EksamenaDarbs {
 
                 frame.add(panel);
                 frame.setVisible(true);
+                izdarits=true;
+            	} else
+            		JOptionPane.showMessageDialog(null, "Tu jau vienreiz izdarīji testu!");
          
                
             }
@@ -144,6 +149,7 @@ public class EksamenaDarbs {
 
         rezultatuPoga.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            	if(nolasits==false) {
             	if(pabeigts==true) {
                 JOptionPane.showMessageDialog(frame2, "Spēles rezultāti");
                 
@@ -219,8 +225,12 @@ public class EksamenaDarbs {
                 	jautajumiN = jautajumiN + jautajumi[9]+"\n";
                 }
                 JOptionPane.showMessageDialog(frame2, "Tavi iegūtie punkti: "+rezultats+"\nNepareizi atbildētie jautājumi: \n" + jautajumiN);
+                
+                nolasits=true;
             	} else
             		 JOptionPane.showMessageDialog(frame2, "Nav pabeigts tests!");    
+            	} else 
+            		JOptionPane.showMessageDialog(frame2, "Tavi iegūtie punkti: "+rezultats+"\nNepareizi atbildētie jautājumi: \n" + jautajumiN); 
             }     
         });
 
