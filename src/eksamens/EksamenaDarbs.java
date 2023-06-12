@@ -50,7 +50,7 @@ public class EksamenaDarbs {
                 {"a) ( )", "b) { }", "c) [ ]", "d) Nevienas"},
                 {"a) 'kakis'", "b) i", "c) #", "d) l"},
                 {"a) Ja nosacījums ir patiess, tas vienmēr izprintē '+'", "b) For cikls vienmēr atkārtojas 3 reizes", "c)For cikls darbību beidz, kad tā nosacījums ir nepatiess", "d) For cikls vienmēr izpilda nosacījumu vismaz 1 reizi"},
-                {"a) Pareizi iestatīt sākuma vērtību", "b) Pareizi iestatīt nosacījumu", "c)Pareizi iestatīt iterācijas soli", "d)Ielikt for ciklu starp pēfiņām"}
+                {"a) Pareizi iestatīt sākuma vērtību", "b) Pareizi iestatīt nosacījumu", "c)Pareizi iestatīt iterācijas soli", "d)Ielikt for ciklu starp pēdiņām"}
             };
 		
 		JFrame frame2 = new JFrame("Sākums");
